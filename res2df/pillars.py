@@ -323,7 +323,7 @@ def compute_pillar_contacts(
         return owc
     if owc.empty and not goc.empty:
         return goc
-    return pd.merge(owc, goc)
+    return pd.merge(owc, goc, how="outer")
 
 
 def fill_parser(parser: argparse.ArgumentParser) -> argparse.ArgumentParser:
